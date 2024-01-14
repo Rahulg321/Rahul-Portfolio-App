@@ -7,6 +7,8 @@ import { components } from "@/slices";
 
 type Params = { uid: string };
 
+export const dynamic = "force-dynamic";
+
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
