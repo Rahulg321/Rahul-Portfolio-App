@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"textblock": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure aliqua culpa aute amet. Et ut ut eu reprehenderit ex pariatur cupidatat aute elit esse."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

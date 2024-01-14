@@ -1,0 +1,6 @@
+{
+  "repositoryName": "rahul-portfolio-app",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./slices"],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}
