@@ -41,11 +41,11 @@ const ContentList = ({
               end: "bottom top",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
     },
-    { scope: listItem }
+    { scope: listItem },
   );
 
   const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
@@ -53,36 +53,36 @@ const ContentList = ({
   return (
     <div className="mt-8">
       <ul className="grid border-b border-b-slate-100">
-        {[...items, ...items, ...items, ...items, ...items].map(
+        {items.map(
           (item, index) =>
             isFilled.keyText(item.data.title) && (
               <li
                 key={index}
-                className="list-item opacity-0f"
+                className="opacity-0f list-item"
                 ref={(e) => (listItem.current[index] = e)}
               >
                 <Link
                   href={`${urlPrefix}/${item.uid}`}
-                  className="flex flex-col justify-between md:flex-row border-t border-t-slate-100 text-slate-200 py-10"
+                  className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
                   aria-label={item.data.title}
                 >
                   <div className="flex flex-col">
                     <span className="text-3xl font-bold">
                       {item.data.title}
                     </span>
-                    <div className="flex gap-3 text-yellow-300 font-bold text-lg">
+                    <div className="flex gap-3 text-lg font-bold text-yellow-300">
                       {item.tags.map((tag, index) => (
                         <span key={index}>{tag}</span>
                       ))}
                     </div>
                   </div>
-                  <span className="flex items-center gap-2 font-semibold text-xl">
+                  <span className="flex items-center gap-2 text-xl font-semibold">
                     {viewMoreText}
                     <MdArrowOutward />
                   </span>
                 </Link>
               </li>
-            )
+            ),
         )}
       </ul>
     </div>
