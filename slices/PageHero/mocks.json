@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"page_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "tape",
+				"type": "Text"
+			},
+			"page_tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "instance",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

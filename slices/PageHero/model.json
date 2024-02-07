@@ -1,0 +1,33 @@
+{
+  "id": "page_hero",
+  "type": "SharedSlice",
+  "name": "PageHero",
+  "description": "PageHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Page Heading",
+            "placeholder": ""
+          }
+        },
+        "page_tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Page Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

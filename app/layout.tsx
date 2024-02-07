@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
+import { Toaster } from "react-hot-toast";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -25,13 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-slate-900 text-slate-100">
+    <html lang="en" className="bg-gray-900 text-slate-100">
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
         {children}
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
         <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
         <Footer />
+        <Toaster position="bottom-center" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

@@ -8,6 +8,6 @@ const config: Config = {
     "./slices/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {},
-  plugins: [require("@tailwindcss/typography"), "prettier-plugin-tailwindcss"],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
 export default config;
