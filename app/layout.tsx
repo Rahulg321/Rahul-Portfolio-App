@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Footer />
         <Toaster position="bottom-center" />
         <PrismicPreview repositoryName={repositoryName} />
+        <Analytics />
       </body>
     </html>
   );
