@@ -7,7 +7,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import Bounded from "@/components/Bounded";
 import Image from "next/image";
-import heroImg from "@/public/hero-img.svg";
+import heroImg from "@/public/man-developing-website-on-desk.svg";
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -89,10 +89,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             </span>
           </h1>
         </div>
-        <div>
+        <div className="aspect-w-1 aspect-h-1 relative">
           <Image
             src={heroImg}
             alt="hero image of a person coding in rahul portfolio site"
+            fill
+            className="rounded-full object-cover"
           />
         </div>
       </div>

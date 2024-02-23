@@ -20,6 +20,9 @@ const PageHero = ({ slice }: PageHeroProps): JSX.Element => {
       <Heading as="h1" size="xl">
         {slice.primary.page_heading}
       </Heading>
+      <Heading size="xs" as="h6" className="mt-2">
+        {slice.primary.page_tagline}
+      </Heading>
     </Bounded>
   );
 };
