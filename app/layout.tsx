@@ -28,6 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-gray-900 text-slate-100">
+      <meta
+        name="google-site-verification"
+        content="8pP_lJBKWWCw5FpUWOGsVYea4jHoZ4bVNitNrYCI_EU"
+      />
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
         {children}
