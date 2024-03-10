@@ -29,14 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-gray-900 text-slate-100">
-      <meta
-        name="google-site-verification"
-        content="8pP_lJBKWWCw5FpUWOGsVYea4jHoZ4bVNitNrYCI_EU"
-      />
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
         {children}
-        <Analytics />
         <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
         <div className="pointer-events-none absolute inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
         <Footer />
