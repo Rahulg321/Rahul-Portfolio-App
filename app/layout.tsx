@@ -29,6 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-gray-900 text-slate-100">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
         {children}
