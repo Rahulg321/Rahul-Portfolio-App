@@ -8,6 +8,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Toaster position="bottom-center" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
+      <GoogleAnalytics gaId="G-K15N8WF6F3" />
     </html>
   );
 }
