@@ -11,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://rahulguptadev.in/blogs",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: "https://rahulguptadev.in/projects",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
