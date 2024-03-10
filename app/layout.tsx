@@ -31,6 +31,18 @@ export default function RootLayout({
     <html lang="en" className="bg-gray-900 text-slate-100">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
       </head>
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
