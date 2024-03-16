@@ -15,7 +15,7 @@ export default function ContentBody({
   return (
     <Bounded as="article">
       <div className="rounded-2xl border-2 border-slate-800 bg-slate-900 px-4 py-10 md:px-8 md:py-20">
-        <Heading as="h2" className="mb-4 md:mb-8">
+        <Heading as="h3" className="mb-4 md:mb-8">
           {page.data.title}
         </Heading>
         <div className="flex gap-4 text-yellow-400">
