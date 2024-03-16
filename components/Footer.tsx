@@ -6,6 +6,7 @@ import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import { isFilled } from "@prismicio/client";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
+import { SiUpwork } from "react-icons/si";
 
 export default async function Footer() {
   const client = createClient();
@@ -37,7 +38,7 @@ export default async function Footer() {
                 <li>
                   <PrismicNextLink
                     className={clsx(
-                      "group relative block overflow-hidden  rounded px-3 py-1 text-base font-bold text-slate-100 transition-colors duration-150 hover:hover:text-yellow-400"
+                      "group relative block overflow-hidden  rounded px-3 py-1 text-base font-bold text-slate-100 transition-colors duration-150 hover:hover:text-yellow-400",
                     )}
                     field={link}
                   >
@@ -82,6 +83,15 @@ export default async function Footer() {
               aria-label={settings.data.name + " on LinkedIn"}
             >
               <FaLinkedin />
+            </PrismicNextLink>
+          )}
+          {isFilled.link(settings.data.instagram_link) && (
+            <PrismicNextLink
+              field={settings.data.upwork_link}
+              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+              aria-label={settings.data.name + " on LinkedIn"}
+            >
+              <SiUpwork />
             </PrismicNextLink>
           )}
         </div>
