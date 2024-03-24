@@ -1,8 +1,11 @@
 import z from "zod";
 
 export const ContactUsSchema = z.object({
-  name: z.string().refine((value) => value.trim() !== "", {
-    message: "Name is required",
+  firstName: z.string().refine((value) => value.trim() !== "", {
+    message: "First name is required",
+  }),
+  lastName: z.string().refine((value) => value.trim() !== "", {
+    message: "Last name is required",
   }),
 
   email: z.string().email(),

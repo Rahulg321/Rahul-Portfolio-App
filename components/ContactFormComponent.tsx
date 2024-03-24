@@ -45,14 +45,24 @@ const ContactFormComponent = ({ classname }: ContactFormProps) => {
         className={clsx("flex flex-col gap-4", classname)}
       >
         <input
-          {...register("name", {
+          {...register("firstName", {
             required: "name is required",
           })}
-          placeholder="Your name"
-          className="form-input flex-1 font-semibold text-black"
+          placeholder="First Name"
+          className="form-input flex-1 p-4 font-semibold text-black"
         />
-        {errors.name && (
-          <span className="text-red-500">{`${errors.name.message}`}</span>
+        {errors.firstName && (
+          <span className="text-red-500">{`${errors.firstName.message}`}</span>
+        )}
+        <input
+          {...register("lastName", {
+            required: "name is required",
+          })}
+          placeholder="Last name"
+          className="form-input flex-1 p-4 font-semibold text-black"
+        />
+        {errors.lastName && (
+          <span className="text-red-500">{`${errors.lastName.message}`}</span>
         )}
         <input
           {...register("email")}

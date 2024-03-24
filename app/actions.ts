@@ -25,17 +25,24 @@ export async function SubmitContactForm(formData: TContactUsSchema) {
       return { errors: true, zodErrors };
     }
 
-    await resend.emails.send({
-      from: "Rahul Gupta <onboarding@resend.dev>",
+    const { data, error } = await resend.emails.send({
+      from: `${formData.firstName} ${formData.lastName} <rahul@rahulguptadev.in>`,
       to: "rg5353070@gmail.com",
-      subject: `Contact Inquiry from ${formData.name}`,
+      subject: `Contact Inquiry from ${formData.firstName} ${formData.lastName}`,
       reply_to: formData.email,
       react: React.createElement(ContactFormEmail, {
         message: formData.message,
-        name: formData.name,
+        name: formData.firstName,
         email: formData.email,
       }),
     });
+
+    if (error) {
+      console.log(error);
+      return {
+        errors: true,
+      };
+    }
 
     return {
       success: true,
