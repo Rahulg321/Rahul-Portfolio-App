@@ -17,8 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await client.getSingle("settings");
 
   return {
-    title: settings.data.meta_title,
-    description: settings.data.meta_description,
+    metadataBase: new URL("https://rahulguptadev.in"),
+    title: {
+      default: "Rahul Gupta Portfolio App",
+      template: `%s | Rahul Gupta Portfolio App`,
+    },
+    description:
+      "Rahul Gupta - Developer, Blogger, Gamer, Fitness Enthusiast. I build web projects, write about tech, and love freelancing. Explore my portfolio, blog posts, and get a glimpse into my passions for gaming and fitness!",
   };
 }
 
@@ -29,37 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-gray-900 text-slate-100">
-      <head>
-        <meta property="og:image" content="<generated>" />
-        <meta property="og:image:type" content="<generated>" />
-        <meta property="og:image:width" content="<generated>" />
-        <meta property="og:image:height" content="<generated>" />
-        <meta
-          property="og:image:alt"
-          content="Meet Rahul Gupta. Developer from India"
-        />
-        <meta name="twitter:image" content="<generated>" />
-        <meta name="twitter:image:type" content="<generated>" />
-        <meta name="twitter:image:width" content="<generated>" />
-        <meta name="twitter:image:height" content="<generated>" />
-        <meta
-          property="twitter:image:alt"
-          content="Meet Rahul Gupta. Developer from India"
-        />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="icon"
-          href="/icon?<generated>"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-icon?<generated>"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-      </head>
       <body className={clsx(urbanist.className, "relative min-h-screen")}>
         <Header />
         {children}

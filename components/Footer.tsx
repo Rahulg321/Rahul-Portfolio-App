@@ -85,7 +85,7 @@ export default async function Footer() {
               <FaLinkedin />
             </PrismicNextLink>
           )}
-          {isFilled.link(settings.data.instagram_link) && (
+          {isFilled.link(settings.data.upwork_link) && (
             <PrismicNextLink
               field={settings.data.upwork_link}
               className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"

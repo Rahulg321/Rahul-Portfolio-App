@@ -1,9 +1,28 @@
+import { createClient } from "@/prismicio";
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap() {
+  const client = createClient();
+  const baseUrl = "https://rahulguptadev.in";
+
+  const blogs = await client.getAllByType("blog_post");
+  const projects = await client.getAllByType("project");
+
+  const blogsURLS =
+    blogs.map((member) => ({
+      url: `${baseUrl}/team/${member.data.title}`,
+      lastModified: new Date(),
+    })) ?? [];
+
+  const projectsURLS =
+    projects.map((member) => ({
+      url: `${baseUrl}/operatingteam/${member.data.title}`,
+      lastModified: new Date(),
+    })) ?? [];
+
   return [
     {
-      url: "https://rahulguptadev.in",
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
@@ -32,5 +51,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.5,
     },
+
+    ...blogsURLS,
+    ...projectsURLS,
   ];
 }
