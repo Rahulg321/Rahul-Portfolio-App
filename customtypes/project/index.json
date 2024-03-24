@@ -52,6 +52,14 @@
           "label": "Meta Description",
           "placeholder": ""
         }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }

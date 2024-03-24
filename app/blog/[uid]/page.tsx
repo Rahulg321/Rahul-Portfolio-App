@@ -29,9 +29,18 @@ export async function generateMetadata({
     .getByUID("blog_post", params.uid)
     .catch(() => notFound());
 
+  if (!page)
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+    };
+
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    alternates: {
+      canonical: `/blog/${page.uid}`,
+    },
   };
 }
 
