@@ -69,7 +69,7 @@ const ContactFormComponent = ({ classname }: ContactFormProps) => {
           type="email"
           placeholder="Email"
           name="email"
-          className="form-input flex-1 font-semibold text-black"
+          className="form-input flex-1 p-4 font-semibold text-black"
         />
         {errors.email && (
           <span className="text-red-500">{`${errors.email.message}`}</span>
@@ -80,7 +80,7 @@ const ContactFormComponent = ({ classname }: ContactFormProps) => {
           })}
           name="message"
           placeholder="Your message"
-          className="form-textarea w-full font-semibold text-black"
+          className="form-textarea w-full p-4 font-semibold text-black"
         ></textarea>
         {errors.message && (
           <span className="text-red-500">{`${errors.message.message}`}</span>
