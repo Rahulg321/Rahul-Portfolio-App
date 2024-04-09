@@ -38,8 +38,6 @@ export async function POST(request: Request) {
       const data = await res.json();
       return NextResponse.json(data);
     }
-
-    await AddOrderToCart();
   } catch (error) {
     console.log(error);
   }
