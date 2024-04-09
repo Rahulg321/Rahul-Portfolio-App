@@ -2,10 +2,7 @@ import { NextResponse } from "next/server";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "@/components/firebase/config";
 
-export const runtime = "edge";
-export const dynamic = "force-dynamic";
-
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   try {
     const newCityRef = doc(collection(db, "orders"));
 
