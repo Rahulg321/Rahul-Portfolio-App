@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "@/firebase/config";
+import { db } from "@/app/firebase/config";
 
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
@@ -20,9 +20,5 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Error creating order:", error);
-    return NextResponse.json(
-      { success: false, message: "Failed to create order." },
-      { status: 500 },
-    );
   }
 }
