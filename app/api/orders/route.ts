@@ -5,7 +5,7 @@ import { db } from "@/components/firebase/config";
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
   try {
     const newCityRef = doc(collection(db, "orders"));
 
