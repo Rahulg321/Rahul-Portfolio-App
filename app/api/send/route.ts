@@ -1,3 +1,4 @@
+import { AddOrderToCart } from "@/components/firebase/AddOrder";
 import { NextResponse } from "next/server";
 
 export const runtime = "edge";
@@ -37,6 +38,8 @@ export async function POST(request: Request) {
       const data = await res.json();
       return NextResponse.json(data);
     }
+
+    await AddOrderToCart();
   } catch (error) {
     console.log(error);
   }
