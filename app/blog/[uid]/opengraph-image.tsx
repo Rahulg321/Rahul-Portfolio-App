@@ -3,6 +3,7 @@ import { createClient } from "@/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 import { ImageResponse } from "next/og";
 import React from "react";
+import * as prismic from "@prismicio/client";
 
 export const size = {
   width: 1200,
@@ -23,9 +24,7 @@ export default async function og({ params }: { params: { uid: string } }) {
         <div tw="absolute flex inset-0">
           <img
             tw="flex flex-1"
-            src={
-              "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
+            src={prismic.asImageSrc(page.data.featured_image) as string}
             alt={page.data.title as string}
           />
 
