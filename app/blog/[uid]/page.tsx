@@ -7,6 +7,8 @@ import { components } from "@/slices";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import ContentBody from "@/components/ContentBody";
+import * as prismic from "@prismicio/client";
+import Head from "next/head";
 
 type Params = { uid: string };
 
@@ -16,7 +18,32 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("blog_post", params.uid)
     .catch(() => notFound());
 
-  return <ContentBody page={page} />;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.data.title as string,
+    author: {
+      "@type": "Person",
+      name: page.data.author,
+      // The full URL must be provided, including the website's domain.
+      url: new URL("https://rahulguptadev.in/about"),
+    },
+    image: prismic.asImageSrc(page.data.featured_image),
+    datePublished: page.data.publication_date,
+    dateModified: page.last_publication_date,
+  };
+
+  return (
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      </Head>
+      <ContentBody page={page} />
+    </>
+  );
 }
 
 export async function generateMetadata({
